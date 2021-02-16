@@ -1,0 +1,21 @@
+/*
+common.css
+ */
+
+/* 공통 정의 속성 */
+
+* {margin: 0 auto;}
+
+#wrap {
+    position: relative;
+    background-color: white;
+    min-height: 100%;
+}
+
+body {
+    font-family: Avenir,'Lato',"나눔바른고딕",NanumBarunGothic,"애플 SD 산돌고딕 Neo","Apple SD Gothic Neo","나눔고딕",NanumGothic,"맑은 고딕","Malgun Gothic","돋움",dotum,AppleGothic,sans-serif;
+}
+
+a {
+    text-decoration: none;
+}

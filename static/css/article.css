@@ -1,0 +1,107 @@
+@charset "UTF-8";
+/* article.css */
+
+#container {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* con_area */
+#container .con_area {
+    position: relative;
+    width: 100%;
+    max-width: 1180px;
+    margin: 0 auto;
+    padding-top: 50px;
+    padding-bottom: 160px;
+}
+
+/* cont */
+#container .con_area .contents .cont {
+    overflow: hidden;
+    position: relative;
+    max-width: 840px;
+    margin: 0 310px 30px 0;
+    border-bottom: 1px solid #ededed;
+}
+
+#container .con_area .contents .cont a{
+    text-decoration: none;
+    font-weight: normal;
+    color: inherit;
+}
+
+.cont_text{
+    font-size: 14px;
+    float: left;
+    width: 600px;
+    line-height: 20px;
+    max-height: 40px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-word;
+    margin-bottom: 15px;
+    color: #666;
+}
+
+#container .con_area .contents .cont h2 {
+    font-size: 24px;
+    color: #434a53;
+    padding-bottom: 14px;
+}
+
+#container .con_area .contents .cont .cont_post {
+    position: relative;
+    max-width: 640px;
+    padding-right: 200px;
+}
+
+#container .con_area .contents .cont .cont_text{
+    font-size: 14px;
+    line-height: 20px;
+    max-height: 40px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-word;
+    margin-bottom: 15px;
+    color: #666;
+}
+
+/* image 위치 조정 */
+#container .con_area .contents .cont .image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 170px;
+    height: 120px;
+}
+
+/* image 칸에 맞춰서 꽉차게 표현 */
+#container .con_area .contents .cont .image img {
+    height:100%;
+    width:100%;
+    vertical-align: top;
+}
+
+/* 게시 날짜, 조회수 dl */
+#container .con_area .contents .cont dl {
+    font-size: 12px;
+    color: #b5b5b5;
+    overflow: hidden;
+    padding: 7px 0;
+    padding-bottom: 30px;
+    width: 100%;
+}
+
+#container .con_area .contents .cont dt {
+    display: block;
+    float: left;
+    margin-right: 5px;
+}
+
+#container .con_area .contents .cont dd {
+    float: left;
+    margin-left: 5px;
+    margin-right: 5px;
+}

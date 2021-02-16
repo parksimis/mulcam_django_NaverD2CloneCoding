@@ -1,0 +1,91 @@
+/* aside sidebar */
+/* 위치 조정 */
+.sidebar{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width:250px;
+    height:100%;
+}
+
+.sidebar h2{
+    font-family: roboto,sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: #000;
+}
+
+.sidebar ul {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 0px;
+}
+
+/* aside_TOP5 */
+.sidebar .Top5{
+    display:block;
+    margin-bottom: 34px;
+    padding-top: 50px;
+    padding-right: 0;
+    padding-bottom: 14px;
+    border-bottom: 1px solid #ececec;
+}
+
+.sidebar .Top5 ul li a{
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+    font-size: 14px;
+    color: #666;
+    text-decoration: none;
+    white-space: nowrap;
+    margin-bottom: 14px;
+    text-align: left;
+}
+
+.sidebar .Top5 ul li .list_num{
+    display: inline-block;
+    margin-right: 16px;
+    font-family: roboto,sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    color: #1f2124;
+    vertical-align: middle;
+}
+
+/* aside_TOPKEYWORDS */
+.sidebar .TopKeywords .keywords_list{
+    display: block;
+    margin-bottom: 34px;
+    padding: 18px 0 14px;
+    border-bottom: 1px solid #ececec;
+}
+
+.sidebar .TopKeywords .keywords_list a{
+    text-decoration:none;
+    display: inline-block;
+    margin: 0 6px 9px 0;
+    padding: 0 18px;
+    border-radius: 15.5px;
+    background-color: #f2f5f7;
+    font-size: 14px;
+    color: #666;
+    line-height: 32px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+
+.sidebar .Top5 ul li a:hover {
+    color:black;
+}
+
+.sidebar .TopKeywords .keywords_list a:hover {
+    color:black;
+}
+
+

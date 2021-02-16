@@ -1,0 +1,46 @@
+/* paginate.css */
+.paginate_box {
+    position: relative;
+    max-width: 840px;
+    padding-bottom: 100px;
+    height: 30px;
+    text-align: center;
+    overflow: hidden;
+    clear: both;
+    margin-top: 30px;
+    margin-right: 270px;
+    font-size:12px;
+}
+
+.paginate_box .paginate a:hover {
+    background: url("../image/spr_paging.png") 0px -60px no-repeat;
+    background-size: 120px 90px;
+    color: #fff;
+}
+
+.paginate_box .paginate .btn_num.select {
+    background: url("../image/spr_paging.png") 0px -60px no-repeat;
+    background-size: 120px 90px;
+    color: #fff;
+}
+
+.paginate_box .paginate .btn_next {
+    background: url("../image/spr_paging.png") -90px 0px no-repeat;
+    background-size: 120px 90px;
+    color: #fff;
+}
+
+.paginate_box .paginate a {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    color: #bbb;
+    text-decoration: none;
+    vertical-align: middle;
+    background: url("../image/spr_paging.png") 0px 0px no-repeat;
+    background-size: 120px 90px;
+    line-height: 30px;
+    margin: 0 3px 0 2px;
+}
+
+

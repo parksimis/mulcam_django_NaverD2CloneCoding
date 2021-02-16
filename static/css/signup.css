@@ -1,0 +1,128 @@
+/*
+login.css
+ */
+
+/* --------------- common -------------- */
+body {
+    position: relative;
+    height: 100%;
+    background: #f5f6f7;
+    font-family: Helvetica, Dotum, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+#wrap {
+    position: relative;
+    margin: 0 auto;
+    min-height: 100%;
+}
+
+#header {
+    width: 768px;
+    margin: 0 auto;
+    position: relative;
+    padding: 106px;
+    padding-bottom: 30px;
+    box-sizing: border-box;
+}
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+h1 {
+    display: block;
+    font-size: 2em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+#naverlogo {
+    background: url("https://static.nid.naver.com/images/ui/login/t_sp_login_190522.png") no-repeat;
+    background-position: -1px -1px;
+    background-size: 460px auto;
+    display: block;
+    width: 231px;
+    height: 44px;
+    margin: 0 auto;
+    font-size: 15px;
+    color: transparent;
+}
+.blind{
+    position: absolute;
+    color: black;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+}
+
+#container {
+    position: relative;
+    margin: 0 auto;
+    width: 768px;
+    text-align: center;
+}
+
+input {
+    width: 50%;
+    position: relative;
+    height: 46px;
+    padding: 7px 35px 10px 11px;
+    border: solid 1px #dadada;
+    background: #fff;
+    font-size: 14px;
+}
+select {
+    width: 50%;
+    position: relative;
+    height: 46px;
+    padding: 7px 35px 10px 11px;
+    border: solid 1px #dadada;
+    background: #fff;
+    font-size: 14px;
+}
+
+#submit_btn {
+    line-height: 45px;
+    width: 50%;
+    height: 56px;
+    margin: 12px 0 14px;
+    border: solid 1px rbga(0,0,0,.1);
+    box-shadow: 0 2px 6px 0 rgb(61 80 81 / 8%);
+    background-color: #03c75a;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 0;
+    font-size: 16px;
+    letter-spacing: -.5px;
+    color: white;
+}
+.bottom_box {
+    position: relative;
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+    padding-bottom: 106px;
+}
+#bottom {
+    margin: 0 auto;
+}
+#bottom span{
+    font-size: 13px;
+}
+#bottom a{
+    padding: 0;
+    margin-left: 20px;
+    font-size: 13px;
+    color: #666;
+}
+
+h3 {
+    font-size: 14px;
+    font-weight: 700;
+    text-align: left;
+    padding-left: 25%;
+}

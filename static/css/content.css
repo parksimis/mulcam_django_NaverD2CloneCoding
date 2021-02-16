@@ -1,0 +1,158 @@
+@charset "UTF-8";
+/* content.css */
+
+/*****************content********************/
+
+#contentBox {
+    position: relative;
+    font-size: 14px;
+}
+
+#show {
+    position: relative;
+}
+
+#content {
+    position: relative;
+
+}
+
+#contentBox .deview{
+    margin-left:-100px;
+}
+
+#contentBox .deview div{
+    display:inline-block;
+    overflow: hidden;
+    margin-bottom: 40px;
+    margin-top:70px;
+    color: #666;
+    padding: 22px 0 0 50px;
+}
+
+#contentBox .techConcert div{
+    display:inline-block;
+    overflow: hidden;
+    margin-bottom: 40px;
+    margin-top:30px;
+
+    color: #666;
+    padding: 22px 0 0 50px;
+}
+
+#contentBox .campusFest div{
+    display:inline-block;
+    overflow: hidden;
+    margin-bottom: 40px;
+    margin-top:30px;
+
+    color: #666;
+    padding: 22px 0 0 50px;
+}
+
+
+#contentBox .d2_Campus div{
+    display:inline-block;
+    overflow: hidden;
+    margin-bottom: 40px;
+    margin-top:30px;
+
+    color: #666;
+    padding: 22px 0 0 50px;
+}
+
+
+
+#contentBox .community div{
+    display:inline-block;
+    overflow: hidden;
+    margin-bottom: 40px;
+    margin-top:30px;
+
+    color: #666;
+    padding: 22px 0 0 50px;
+}
+
+/* 글씨 이미지 넣기 */
+
+#deviewText strong{
+    background-size: 130px 23px;
+    width: 130px;
+    height: 23px;
+    margin-left: 0px;
+    margin-bottom: 30px;
+    background-image: url(https://d2.naver.com/static/img/app/logo-deview.svg);
+    overflow: hidden;
+    display: block;
+    line-height: 100px;
+
+}
+
+#techText strong{
+    width: 232px;
+    height: 24px;
+    overflow: hidden;
+    display: block;
+    margin-left: 0px;
+    margin-bottom: 30px;
+    background: url(https://d2.naver.com/static/img/app/sp_program_logo_v3.png) no-repeat;
+    background-position: -368px -296px;
+    background-size: 670px 400px;
+    color: transparent;
+    line-height: 100px;
+}
+
+#FestText strong{
+    width: 131px;
+    height: 38px;
+
+    overflow: hidden;
+    display: block;
+    margin-left: 0px;
+    margin-bottom: 30px;
+    background: url(https://d2.naver.com/static/img/app/sp_program_logo_v3.png) no-repeat;
+    background-position: -212px 0;
+    background-size: 670px 400px;
+    color: transparent;
+    line-height: 100px;
+}
+
+#campusText strong{
+    width: 154px;
+    height: 33px;
+    overflow: hidden;
+    display: block;
+    margin-left: 0px;
+    margin-bottom: 30px;
+    background: url(https://d2.naver.com/static/img/app/sp_program_logo_v3.png) no-repeat;
+    background-position: -212px -105px;
+    background-size: 670px 400px;
+    color: transparent;
+    line-height: 100px;
+}
+
+#communityText strong{
+    width: 206px;
+    height: 33px;
+    overflow: hidden;
+    display: block;
+    margin-left: 0px;
+    margin-bottom: 30px;
+    background: url(https://d2.naver.com/static/img/app/sp_program_logo_v3.png) no-repeat;
+    background-position: 0 0;
+    background-size: 670px 400px;
+    color: transparent;
+    line-height: 100px;
+}
+
+
+/**********가운데 정렬*/
+
+#deviewText{
+    vertical-align:top;
+
+}
+#techText{vertical-align:top;}
+#FestText{vertical-align:top;}
+#campusText{vertical-align:top;}
+#communityText{vertical-align:top;}

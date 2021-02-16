@@ -1,0 +1,25 @@
+{% extends "accounts/layout.html" %}
+
+{% block content %}
+<div id="container">
+    <div class="form">
+        <form action="#" method="post">
+            <p class="login_user_name">
+                <input id="id" placeholder="아이디">
+            </p>
+            <p class="login_user_password">
+                <input type="password" id="#" placeholder="비밀번호">
+            </p>
+            <p style="color: red;">
+                가입하지 않은 아이디이거나, 잘못된 비밀번호입니다.
+            </p>
+            <input type="submit" id="submit_btn" value="로그인" class="submit_btn">
+        </form>
+    </div>
+</div>
+<div class="bottom_box">
+    <div id="bottom">
+        <a href="#">회원가입</a>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,78 @@
+@charset "UTF-8";
+/*
+index.css
+ */
+
+/* ------------------- HEADER ------------------- */
+
+#headerBox{
+    width: 70%;
+    height: 69px;
+    line-height: 69px;
+    padding: 0;
+}
+#logoBox {
+    position: relative;
+    display: inline-block;
+    background: url("../image/d2_logo.gif");
+    background-size: 120px 27px;
+    width: 120px;
+    height: 27px;
+    cursor: pointer;
+    top: 8px;
+}
+
+#topMenuBox {
+    display: inline-block;
+    margin: 0 auto;
+    padding-left: 40px;
+}
+
+#topMenuBox a{
+    padding-right: 20px;
+    color: gray;
+    cursor: pointer;
+}
+#topMenuBox a:hover{
+    color: black;
+}
+#inputBox {
+    float: right;
+    display: inline-block;
+    height: 69px;
+    line-height: 69px;
+    text-align: center;
+}
+
+#inputBox input{
+    display: inline-block;
+    width: 230px;
+    height: 36px;
+    margin-right: 10px;
+}
+
+.removeInputBox {
+    display: none;
+}
+#inputBox button {
+    display: inline-block;
+    width: 43px;
+    height: 36px;
+    line-height: 36px;
+    cursor: pointer;
+    background: white;
+    text-align: center;
+    border: none;
+    border-left: solid 1px gray;
+}
+
+#inputBox img {
+    display: inline;
+    width: 19px;
+    height: 21px;
+}
+
+.mainMenuFixed{
+    position: fixed;
+    top: 0px;
+}

@@ -1,0 +1,133 @@
+@charset "UTF-8";
+
+/*!**/
+/*footer.css*/
+/**!*/
+
+#footerBox {
+    position: absolute;
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+#inner_box {
+    position: relative;
+}
+.other_site{
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 43px 0;
+    text-align: left;
+}
+.other_site li {
+    display: inline-block;
+    list-style-type: none;
+    width: auto;
+    height: auto;
+    vertical-align: middle;
+}
+
+.other_site a {
+    display: block;
+    background: url("../image/sp_program_logo_v3.png") no-repeat;
+    background-size: 353px 200px;
+    overflow: hidden;
+    line-height: 100px;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+}
+
+#developers {
+    width: 148px;
+    height: 17px;
+    background-position: 0 -86px;
+}
+#techcon {
+    width: 180px;
+    height: 10px;
+    background-position: -146px -165px;
+}
+#deview{
+    width: 80px;
+   height: 13px;
+    background-position: -145px -86px;
+}
+#github{
+    width: 120px;
+    height: 24px;
+    background-position: -240px -52px;
+}
+
+#d2startup {
+    width: 90px;
+    height: 22px;
+    background-position: -240px -80px;
+}
+
+#sns_share {
+    position: relative;
+    max-width: 1180px;
+    margin: 0 auto;
+}
+#sns_share ul{
+    list-style-type: none;
+    position: absolute;
+    bottom: 49px;
+    right: 39px;
+}
+#sns_share li{
+    display: inline-block;
+    overflow: hidden;
+    list-style-type: none;
+    width: 20px;
+    height: 20px;
+    margin-left: 15px;
+    vertical-align: middle;
+}
+#sns_share a{
+    display: block;
+    height: 20px;
+    color: #a5a5a5;
+}
+#sns_share i {
+    width: 23px;
+    height: 23px;
+    margin: 0;
+}
+
+#email a {
+    font-size: 23px;
+}
+#facebook a{
+    font-size: 21px;
+}
+.xi-rss {
+    vertical-align: -3px;
+}
+
+
+/*--------------- Copy Rights ---------------*/
+
+#footer_sec {
+    position: relative;
+}
+#copyright {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 19px 0;
+    color: #323232;
+    text-align: center;
+    font-family: Tahoma, Helvetica, sans-serif;
+    font-size: 9px;
+    word-spacing: 2px;
+    line-height: 10px;
+    border-top: solid 1px #efefef;
+}
+#copyright a{
+    text-decoration: none;
+    color: #323232;
+    font-size: 11px;
+}

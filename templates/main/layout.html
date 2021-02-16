@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{% load static %}
+    <meta charset="UTF-8">
+    <title>NAVER_D2_CloneCoding</title>
+    <link rel="stylesheet" type="text/css" href="{%static 'css/article.css'%}">
+    <link rel="stylesheet" type="text/css" href="{%static 'css/sidebar.css'%}">
+    <link rel="stylesheet" type="text/css" href="{%static 'css/paginate.css'%}">
+    <link rel="stylesheet" href="{%static 'css/common.css'%}">
+    <link rel="stylesheet" href="{%static 'css/index.css'%}">
+    <link rel="stylesheet" href="{%static 'css/slideShow.css'%}">
+    <link rel="stylesheet" href="{%static 'css/footer.css' %}">
+    <link rel="stylesheet" href="{%static 'css/forum.css' %}">
+    <link rel="stylesheet" href="{%static 'css/proMain.css' %}">
+    <link rel="stylesheet" href="{%static 'css/contentbox.css' %}">
+    <link rel="stylesheet" href="{%static 'css/content.css' %}">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <script src="{%static 'js/jquery-3.5.1.min.js' %}"></script>
+    <script src="{%static 'js/index.js' %}"></script>
+    <script src="{%static 'js/slideShow.js'%}"></script>
+    <style>
+        @media (max-width:767px){
+            .sidebar{
+                position: relative;
+                width:100%;
+                height:100%;
+            }
+            .sidebar .Top5 {
+                margin-bottom: 21px;
+                padding: 15px 0 11px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header>
+            <div id="headerBox">
+                <div id="logoBox" onclick="location.href='{% url 'index' %}'"></div>
+                <div id="topMenuBox"><a>Hello world</a><a>D2 News</a><a href="{% url 'program' %}">D2 Program</a><a href="{% url 'community:forum' %}">Forum</a>
+                    {% if user.is_authenticated %}
+                    <span><a href="{% url 'accounts:logout' %}">로그아웃</a></span>
+                    {% else %}
+                    <span><a href="{% url 'accounts:login'%}">로그인</a></span>
+                </div>
+                    {% endif %}
+                <div id="inputBox">
+                    <input type="text" placeholder="D2에서 검색">
+                    <button type="button"><img id='searchImg' src="https://d2.naver.com/static/img/app/spr_btn_search.png"></button>
+                </div>
+            </div>
+        </header>
+        {% block content %}
+
+        {% endblock %}
+        <footer>
+            <div id="footerBox">
+                <div id="inner_box">
+                    <ul class="other_site">
+                        <li><a href="https://developers.naver.com/main/" id="developers">Naver Developers</a></li>
+                        <li><a href="https://techcon.naver.com/" id="techcon">techcon</a></li>
+                        <li><a href="https://deview.kr/2020" id="deview">deview</a></li>
+                        <li><a href="https://naver.github.io/" id="github">github</a></li>
+                        <li><a href="http://www.d2startup.com/" id="d2startup"></a></li>
+                    </ul>
+                    <div id="sns_share">
+                        <ul>
+                            <li id="email"><a href="mailto:d2@navercorp.com"><i class="xi-mail"></i></a></li>
+                            <li id="facebook"><a href="https://www.facebook.com/naverd2"><i class="xi-facebook"></i></a></li>
+                            <li id="rss"><a href="https://d2.naver.com/d2.atom"><i class="xi-rss"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="footer_sec">
+                    <div id="copyright">
+                        <p>
+                            <span>Copyright</span> &copy;<a href="https://www.navercorp.com">
+                            Naver Corp.
+                        </a>
+                            <span>All Rights Reserved.</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div><!-- wrap 끝 -->
+</body>
+</html>
