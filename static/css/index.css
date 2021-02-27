@@ -4,13 +4,23 @@ index.css
  */
 
 /* ------------------- HEADER ------------------- */
-
 #headerBox{
-    width: 70%;
+    position: relative;
+    width: 100%;
     height: 69px;
     line-height: 69px;
-    padding: 0;
 }
+
+.main_lnb {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #fff;
+    z-index: 1000;
+    border: solid 1px gray;
+    text-align: center;
+}
+
 #logoBox {
     position: relative;
     display: inline-block;
@@ -37,7 +47,7 @@ index.css
     color: black;
 }
 #inputBox {
-    float: right;
+    margin-left: 200px;
     display: inline-block;
     height: 69px;
     line-height: 69px;
@@ -54,6 +64,7 @@ index.css
 .removeInputBox {
     display: none;
 }
+
 #inputBox button {
     display: inline-block;
     width: 43px;
@@ -72,7 +83,3 @@ index.css
     height: 21px;
 }
 
-.mainMenuFixed{
-    position: fixed;
-    top: 0px;
-}

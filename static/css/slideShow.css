@@ -8,12 +8,12 @@ slideShow.css
     height: 440px;
     line-height: 440px;
     border-bottom: solid 1px gray;
-    border-top: solid 1px gray;
 }
 
 #prevNextButtonBox {
     position: relative;
 }
+
 #prevButton {
     position: absolute;
     left: 20px;
@@ -48,6 +48,7 @@ slideShow.css
 #nextButton:hover {
     opacity: 1;
 }
+
 #slideShowBox {
     position: relative;
     width: 1900px;

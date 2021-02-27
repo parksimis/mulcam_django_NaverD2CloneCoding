@@ -33,21 +33,23 @@
     <div id="wrap">
         <header>
             <div id="headerBox">
-                <div id="logoBox" onclick="location.href='{% url 'index' %}'"></div>
-                <div id="topMenuBox">
-                    <a>Hello world</a>
-                    <a>D2 News</a>
-                    <a href="{% url 'program' %}">D2 Program</a>
-                    <a href="{% url 'community:forum' %}">Forum</a>
-                    {% if user.is_authenticated %}
-                        <a href="{% url 'accounts:logout' %}">로그아웃</a>
-                    {% else %}
-                        <a href="{% url 'accounts:login'%}">로그인</a>
-                    {% endif %}
-                </div>
-                <div id="inputBox">
-                    <input type="text" placeholder="D2에서 검색">
-                    <button type="button"><img id='searchImg' src="https://d2.naver.com/static/img/app/spr_btn_search.png"></button>
+                <div class="main_lnb">
+                    <div id="logoBox" onclick="location.href='{% url 'index' %}'"></div>
+                    <div id="topMenuBox">
+                        <a>Hello world</a>
+                        <a>D2 News</a>
+                        <a href="{% url 'program' %}">D2 Program</a>
+                        <a href="{% url 'community:forum' %}">Forum</a>
+                        {% if user.is_authenticated %}
+                            <a href="{% url 'accounts:logout' %}">로그아웃</a>
+                        {% else %}
+                            <a href="{% url 'accounts:login'%}">로그인</a>
+                        {% endif %}
+                    </div>
+                    <div id="inputBox">
+                        <input type="text" placeholder="D2에서 검색">
+                        <button type="button"><img id='searchImg' src="https://d2.naver.com/static/img/app/spr_btn_search.png"></button>
+                    </div>
                 </div>
             </div>
         </header>
