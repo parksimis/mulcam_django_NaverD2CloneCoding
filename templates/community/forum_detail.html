@@ -2,36 +2,36 @@
 
 {% block content %}
 
-<div class="container my-3">
+<div id='question_detail' class="container my-3">
     <h2 class="border-bottom py-2">{{ question.subject }}</h2>
     <div class="card my-3">
+        <div class="card-header text-left bg-white border-bottom-0">
+            <span>{{ question.author }}</span><span>{{ question.create_date }}</span>
+        </div>
         <div class="card-body">
-            <div class="card-text" style="white-space: pre-line;">{{ question.content }}</div>
-            <div class="d-flex justify-content-end">
-                <div class="badge badge-light p-2">
-                    {{ question.create_date }}
-                </div>
+            <div class="card-text" style="white-space: pre-line;">
+                {{ question.content }}
             </div>
         </div>
     </div>
 
-    <h5 class="border-bottom my-3 py-2">{{question.answer_set.count}}개의 답변이 있습니다.</h5>
+    <h4 class="border-bottom text-left my-3 py-2"> 댓글 <span>{{question.answer_set.count}}</span></h4>
     <!-- 답변출력 -->
     {% for answer in question.answer_set.all %}
     <div class="card my-3">
+        <div class="card-header text-left bg-white border-bottom-0">
+            <span>{{ answer.author }}</span><span>{{ answer.create_date }}</span>
+        </div>
         <div class="card-body">
-            <div class="card-text" style="white-space: pre-line;">{{ answer.content }}</div>
-            <div class="d-flex justify-content-end">
-                <div class="badge badge-light p-2">
-                    {{ answer.create_date }}
-                </div>
+            <div class="card-text" style="white-space: pre-line;">
+                {{ answer.content }}
             </div>
         </div>
     </div>
     {% endfor %}
 
 <!-- 답변등록 form 생성 -->
-    <form action="{% url 'community:answer_create' question.id %}" method="post" class="my-3">
+    <form id='answer_form' action="{% url 'community:answer_create' question.id %}" method="post" class="my-3" >
         {% csrf_token %}
         {% if form.errors %}
         <div class="alert alert-danger" role="alert">
@@ -43,16 +43,19 @@
         {% endfor %}
         </div>
         {% endif %}
-        <div class="form-group">
-            <textarea name="content" id="content" class="form-control" rows="10"></textarea>
-        </div>
+
         {% if user.is_authenticated %}
-            <input type="submit" value="답변등록" class="btn btn-primary">
+            <div class="form-group">
+                <textarea name="content" id="content" class="form-control" rows="10"></textarea>
+            </div>
+            <button type="submit" class="btn border float-right">새 댓글</button>
+        </form>
         {% else %}
-            <input type="submit" value="답변등록" class="btn alert-dark" disabled style="cursor:not-allowed;">
+            <div class="form-group">
+                <textarea placeholder="로그인 후 이용해주세요." class="form-control" rows="10" disabled=""></textarea>
+            </div>
+        </form>
+        <button onclick="location.href='{% url 'accounts:login' %}'" title="로그인 후 이용해주세요." class="btn border float-right"> 로그인 후 댓글 쓰기</button>
         {% endif %}
-    </form>
 </div>
-
-
 {% endblock %}

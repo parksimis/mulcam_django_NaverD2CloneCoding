@@ -2,43 +2,40 @@
 {% load combot_filter %}
 
 {% block content %}
+
+<!--    http://서버주소/combot/question_create -->
+
 <div class="container my-3">
+    <div id="new_question_btn">
+        <button onclick="location.href='{% url 'community:question_create' %}'" class="btn border float-right"> <span><i class="xi-plus"></i> 새 글쓰기</span></button>
+    </div>
+    <!--    <a href="{% url 'community:question_create' %}" class="btn btn-primary float-right">질문 등록하기</a>-->
 <!-- m : margin p : padding -->
-    <table class="table">
-        <thead>
-        <tr class="thead-dark">
-            <th>번호</th>
-            <th>제목</th>
-            <th>작성일시</th>
-        </tr>
-        </thead>
-        <tbody>
-        {% if question_list %}
-        {% for question in question_list %}
-        <tr>
-            <td>
-                {{question_list.paginator.count|sub:question_list.start_index|sub:forloop.counter0|add:1}}
-            </td>
-            <td>
-                <a href="{% url 'community:detail' question.id %}">
-                {{question.subject}}
-                </a>
-                {% if question.answer_set.count > 0 %}
-                <span class="text-danger small ml-2">{{question.answer_set.count}}</span>
-                {% endif %}
-            </td>
-            <td>
-                {{question.create_date}}
-            </td>
-        </tr>
-        {% endfor %}
-        {% else %}
-        <tr>
-        <td colspan="3">질문이 없습니다.</td>
-        </tr>
-        {% endif %}
-        </tbody>
-    </table>
+    {% if question_list %}
+    {% for question in question_list %}
+    <div id='question_list' class="border-0">
+        <div class="card my-3 text-left bg-white">
+            <div class="card-header bg-white border-0 my-3">
+                <a href="{% url 'community:detail' question.id %}"><h3>{{question.subject}}</h3></a>
+            </div>
+            <div class="card-body my-3">
+                <a href="{% url 'community:detail' question.id %}">{{question.content}}</a>
+            </div>
+            <div class="card-footer bg-white border-0 my-3">
+                <span> 작성자 : {{question.author}}</span><span>|</span><span>작성일 : {{question.create_date}}</span>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    {% else %}
+    <div id='question_list' class="container my-3 border-0">
+        <div class="card my-3 text-left bg-white">
+            질문이 없습니다.
+        </div>
+    </div>
+    {% endif %}
+
+
 
 <!-- 페이징처리 시작 -->
     <ul class="pagination justify-content-center">
@@ -80,7 +77,5 @@
         {% endif %}
     </ul>
     <!-- 페이징처리 끝 -->
-    <a href="{% url 'community:question_create' %}" class="btn btn-primary">질문 등록하기</a>
-<!--    http://서버주소/combot/question_create -->
 </div>
 {% endblock %}
