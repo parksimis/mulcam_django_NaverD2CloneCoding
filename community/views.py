@@ -36,6 +36,7 @@ def answer_create(request, question_id):
             answer = form.save(commit=False)
             answer.create_date = timezone.now()
             answer.question = question
+            answer.author = request.user # author 적용
             answer.save()
             return redirect('community:detail', question_id=question.id)
 
@@ -51,6 +52,7 @@ def question_create(request):
         if form.is_valid():
             question = form.save(commit=False)
             question.create_date = timezone.now()
+            question.author = request.user
             question.save()
             return redirect('/community')
     else:
