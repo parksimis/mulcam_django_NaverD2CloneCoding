@@ -50,7 +50,7 @@
     width: 100%;
 }
 
-#question_detail button, #new_question_btn button{
+#question_detail button, #new_question_btn button, #question_enroll button{
     width: 188px;
     height: 59px;
     font-size: 18px;
@@ -58,7 +58,7 @@
     font-family: Nanum Barun Gothic, sans-serif;
 }
 
-#question_detail button:hover, #new_question_btn button:hover{
+#question_detail button:hover, #new_question_btn button:hover, #question_enroll button:hover{
     background-color: #4AB56A;
     color: white;
 }
@@ -87,6 +87,24 @@
     vertical-align: middle;
     line-height: 59px;
 }
-#new_question_btn button {
+#new_question_btn button, #question_enroll button{
     width: 140px;
+    height: 60px;
+}
+
+.container h3{
+    font-weight: bold;
+    font-size: 20px;
+}
+#question_title input{
+    width: 100%;
+}
+
+textarea{
+    resize: none;
+}
+
+#enroll label {
+    font-weight: bold;
+    text-align: left;
 }
