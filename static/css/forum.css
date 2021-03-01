@@ -108,3 +108,25 @@ textarea{
     font-weight: bold;
     text-align: left;
 }
+
+
+/* ***************** Paginator ****************** */
+#paginator a{
+    background-color: white;
+    border: none;
+    color: #595959;
+    font-size: 24px;
+    margin: 15px;
+}
+
+#paginator a:hover{
+    text-decoration-line: underline;
+    text-decoration-color: black;
+    color: black;
+}
+
+#current_page a{
+    text-decoration-line: underline;
+    text-decoration-color: black;
+    color: black;
+}

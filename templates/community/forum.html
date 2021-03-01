@@ -35,19 +35,17 @@
     </div>
     {% endif %}
 
-
-
 <!-- 페이징처리 시작 -->
-    <ul class="pagination justify-content-center">
+    <ul id='paginator' class="pagination justify-content-center">
         <!-- 이전페이지 출력 -->
         {% if question_list.has_previous %} <!-- 현재 페이지 기준으로 이전 페이지가 있으면 -->
         <li class="page-item">
             <a class="page-link" href="?page={{ question_list.previous_page_number }}">이전</a>
         </li>
         {% else %} <!-- 이전 페이지가 없는 경우 -->
-        <li class="page-item disabled">
-            <a class="page-link" tabindex="-1" aria-disabled="true" href="#">이전</a>
-        </li>
+<!--        <li class="page-item disabled">-->
+<!--            <a class="page-link" tabindex="-1" aria-disabled="true" href="#">이전</a>-->
+<!--        </li>-->
         {% endif %}
         <!-- 페이지리스트 -->
         {% for page_number in question_list.paginator.page_range %} <!-- 총 베이지 번호 만큼 for loop 실행 -->
@@ -55,7 +53,7 @@
             <!-- 새로 구성될 페이지 번호가 현재페이지 기준으로 크면 5만큼 작은 값만 표시 and
             현재 페이지 기준으로 작으면 5만큼 큰값만 표시 -->
             {% if page_number == question_list.number %} <!-- 마지막 페이지인지 여부 -->
-            <li class="page-item active" aria-current="page">
+            <li id='current_page' class="page-item active" aria-current="page">
                 <a class="page-link" href="?page={{ page_number }}">{{ page_number }}</a>
             </li>
             {% else %}
@@ -68,12 +66,12 @@
         <!-- 다음 페이지 -->
         {% if question_list.has_next %}
         <li class="page-item">
-            <a class="page-link" href="?page={{ question_list.next_page_number }}">다음</a>
+            <a class="page-link" href="?page={{ question_list.next_page_number }}"><i class="xi-angle-right"></i></a>
         </li>
         {% else %}
-        <li class="page-item disabled">
-            <a class="page-link" tabindex="-1" aria-disabled="true" href="#">다음</a>
-        </li>
+<!--        <li class="page-item disabled">-->
+<!--            <a class="page-link" tabindex="-1" aria-disabled="true" href="#"><i class="xi-angle-right"></i></a>-->
+<!--        </li>-->
         {% endif %}
     </ul>
     <!-- 페이징처리 끝 -->
