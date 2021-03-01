@@ -1,0 +1,13 @@
+{% extends 'community/forum_layout.html' %}
+
+{% block content %}
+<div class="container my-3">
+    <form id='answer_form' method="post" class="my-3" >
+        {% csrf_token %}
+        <div class="form-group">
+            <textarea name="content" id="content" class="form-control" rows="10"></textarea>
+        </div>
+        <button type="submit" class="btn border float-right">새 댓글</button>
+    </form>
+</div>
+{% endblock %}

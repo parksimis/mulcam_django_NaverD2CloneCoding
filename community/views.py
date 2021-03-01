@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from .models import Question
+from .models import Question, Answer
 from django.utils import timezone
 from .forms import QuestionForm, AnswerForm
 from django.core.paginator import Paginator
@@ -28,7 +28,6 @@ def detail(request, question_id):
 
 
 def answer_create(request, question_id):
-
     question = get_object_or_404(Question, pk=question_id)
 
     if request.method == "POST":
@@ -84,3 +83,47 @@ def question_modify(request, question_id):
         form = QuestionForm(instance=question)
     context = {'form': form}
     return render(request, 'community/forum_question_form.html', context=context)
+
+
+def question_delete(request, question_id):
+    '''
+    qustion 삭제 기능
+    '''
+    question = get_object_or_404(Question, pk=question_id)
+    if request.user != question.author:
+        messages.error(request, '삭제권한이 없습니다.')
+        return redirect('community:detail', question_id=question.id)
+
+    question.delete()
+    return redirect('community:forum')
+
+def answer_modify(request, answer_id):
+    answer = get_object_or_404(Answer, pk=answer_id)
+    if request.user != answer.author:
+        messages.error(request, '수정권한이 없습니다.')
+        return redirect('community:detail', question_id=answer.question.id)
+
+    if request.method == "POST":
+        form = AnswerForm(request.POST, instance=answer)
+        if form.is_valid():
+            answer = form.save(commit=False)
+            answer.author = request.user
+            answer.modify_date = timezone.now()
+            answer.save()
+            return redirect('community:detail', question_id=answer.question.id)
+
+    else:
+        form = AnswerForm(instance=answer)
+    context = {'answer': answer, 'form': form}
+    return render(request, 'community/answer_form.html', context)
+
+def answer_delete(request, answer_id):
+    """
+    답변삭제
+    """
+    answer = get_object_or_404(Answer, pk=answer_id)
+    if request.user != answer.author:
+        messages.error(request, '삭제권한이 없습니다.')
+    else:
+        answer.delete()
+    return redirect('community:detail', question_id=answer.question.id)
