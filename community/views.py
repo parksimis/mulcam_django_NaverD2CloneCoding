@@ -3,6 +3,7 @@ from .models import Question
 from django.utils import timezone
 from .forms import QuestionForm, AnswerForm
 from django.core.paginator import Paginator
+from django.contrib import messages
 
 # Create your views here.
 
@@ -59,3 +60,27 @@ def question_create(request):
         form = QuestionForm()
     context = {'form': form}
     return render(request, 'community/forum_question_form.html', context)
+
+def question_modify(request, question_id):
+    '''
+    community 질문 수정
+    '''
+
+    question = get_object_or_404(Question, pk=question_id)
+    if request.user != question.author:
+        messages.error(request, '수정권한이 없습니다.')
+        return redirect('community:detail', question_id=question.id)
+
+    if request.method == 'POST':
+        form = QuestionForm(request.POST, instance=question)
+        if form.is_valid():
+            question = form.save(commit=False)
+            question.author = request.user
+            question.modify_date = timezone.now()
+            question.save()
+            return redirect('community:detail', question_id=question.id)
+
+    else:
+        form = QuestionForm(instance=question)
+    context = {'form': form}
+    return render(request, 'community/forum_question_form.html', context=context)

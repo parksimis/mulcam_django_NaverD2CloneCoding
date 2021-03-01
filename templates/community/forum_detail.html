@@ -3,7 +3,12 @@
 {% block content %}
 
 <div id='question_detail' class="container my-3">
-    <h2 class="border-bottom py-2">{{ question.subject }}</h2>
+    <h2 class="border-bottom py-2">{{ question.subject }}
+<!--        로그인 한 유저와 작성자가 같으면 수정 버튼 보이도록 조건문 추가-->
+        {% if request.user == question.author %}
+        <span id='edit' class="float-right py-2"><i onclick="location.href='{% url 'community:question_modify' question.id %}'" class="xi-pen-o"></i></span>
+        {% endif %}
+    </h2>
     <div class="card my-3">
         <div class="card-header text-left bg-white border-bottom-0">
             <span>{{ question.author }}</span><span>{{ question.create_date }}</span>
