@@ -340,4 +340,7 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+# SECRET KEY FILE
+secrets.json
+
 # End of https://www.toptal.com/developers/gitignore/api/windows,pycharm,django,python
