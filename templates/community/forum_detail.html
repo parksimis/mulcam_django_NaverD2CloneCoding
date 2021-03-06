@@ -1,4 +1,5 @@
 {% extends 'community/forum_layout.html' %}
+{% load combot_filter %}
 
 {% block content %}
 
@@ -17,8 +18,8 @@
             <span>{{ question.author }}</span><span>{{ question.create_date }}</span>
         </div>
         <div class="card-body">
-            <div class="card-text" style="white-space: pre-line;">
-                {{ question.content }}
+            <div class="card-text">
+                {{ question.content|mark}}
             </div>
         </div>
     </div>
@@ -38,7 +39,7 @@
         </div>
         <div class="card-body">
             <div class="card-text" style="white-space: pre-line;">
-                {{ answer.content }}
+                {{ answer.content|mark }}
             </div>
         </div>
     </div>

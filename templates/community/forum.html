@@ -19,7 +19,7 @@
                 <a href="{% url 'community:detail' question.id %}"><h3>{{question.subject}}</h3></a>
             </div>
             <div class="card-body my-3">
-                <a href="{% url 'community:detail' question.id %}">{{question.content}}</a>
+                <a href="{% url 'community:detail' question.id %}">{{question.content|mark}}</a>
             </div>
             <div class="card-footer bg-white border-0 my-3">
                 <span> 작성자 : {{question.author}}</span><span>|</span><span>작성일 : {{question.create_date}}</span>
