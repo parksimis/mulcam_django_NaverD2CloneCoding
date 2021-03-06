@@ -7,7 +7,11 @@
 
 <div class="container my-3">
     <div id="new_question_btn">
+        {% if user.is_authenticated %}
         <button onclick="location.href='{% url 'community:question_create' %}'" class="btn border float-right"> <span><i class="xi-plus"></i> 새 글쓰기</span></button>
+        {% else %}
+        <button onclick="location.href='{% url 'accounts:login' %}'" class="btn border float-right"> <span><i class="xi-plus"></i> 새 글쓰기</span></button>
+        {% endif %}
     </div>
     <!--    <a href="{% url 'community:question_create' %}" class="btn btn-primary float-right">질문 등록하기</a>-->
 <!-- m : margin p : padding -->
