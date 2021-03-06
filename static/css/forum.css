@@ -140,3 +140,8 @@ textarea{
     font-size: 18px;
     padding-top: 2px;
 }
+
+textarea::placeholder{
+    padding: 15px;
+    font-size: 16px;
+}
