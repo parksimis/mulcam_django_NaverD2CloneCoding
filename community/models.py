@@ -10,6 +10,13 @@ class Question(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     # 수정 날짜 Field 추가
     modify_date = models.DateTimeField(null=True, blank=True)
+    # 조회수 기능
+    n_hit = models.PositiveIntegerField(default=0)
+
+    @property
+    def update_counter(self):
+        self.n_hit = self.n_hit + 1
+        self.save()
 
     def __str__(self):
         return self.subject
